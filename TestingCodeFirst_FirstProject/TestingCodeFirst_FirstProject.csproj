@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBContext\BloggingContext.cs" />
+    <Compile Include="Extensions\DbSetExtension.cs" />
     <Compile Include="Models\Blog.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Program.cs" />

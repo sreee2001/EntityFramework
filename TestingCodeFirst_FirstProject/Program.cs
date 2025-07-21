@@ -17,20 +17,20 @@ namespace TestingCodeFirst_FirstProject
 
                 {
                     // Create a new blog
-                    var blog = new Models.Blog { Name = "My First Blog" };
+                    Models.Blog blog = new Models.Blog { Name = "My First Blog" };
                     db.Blogs.Add(blog);
 
                     // Save changes to the database
                     db.SaveChanges();
-                }
 
-                {
-                    // Create a new post
-                    var post = new Models.Post { Title = "Hello World", Content = "This is my first post!", BlogId = blog.BlogId };
-                    db.Posts.Add(post);
-                    // Save changes to the database
+                    {
+                        // Create a new post
+                        var post = new Models.Post { Title = "Hello World", Content = "This is my first post!", BlogId = blog.BlogId };
+                        db.Posts.Add(post);
+                        // Save changes to the database
 
-                    db.SaveChanges();
+                        db.SaveChanges();
+                    }
                 }
 
                 {
