@@ -12,11 +12,11 @@ namespace TestingCodeFirst_FirstProject.DBContext
         public BloggingContext()
             //: base("name=dev")
             //: base("name=qa")
-            //: base("name=prod")
-            
+            //: base("name=prod")            
         { 
             Database.SetInitializer(new DBInitializer());
         }
+
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Post> Posts { get; set; }
     }
