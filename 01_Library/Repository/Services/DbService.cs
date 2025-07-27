@@ -66,6 +66,7 @@ namespace Repository.Services
         //[Import]
         //public IMessagingService MessagingService { get; set; }
 
+        /// <inheritdoc />
         public bool CanSaveChanges()
         {
             try
@@ -131,6 +132,7 @@ namespace Repository.Services
         {
             return DbContext.Set<TEntity>();
         }
+
         /// <inheritdoc />
         public void Refresh(Entity entity)
         {
@@ -139,6 +141,7 @@ namespace Repository.Services
             DbContext.Entry(entity).Reload();
         }
 
+        /// <inheritdoc />
         public void Refresh()
         {
             IEnumerable<DbEntityEntry> dbEntityEntries = DbContext.ChangeTracker.Entries();
@@ -153,16 +156,16 @@ namespace Repository.Services
         //    return DbContext.Entry(entity);
         //}
 
+        /// <inheritdoc />
         public void ResetContext()
         {
             DbContext = new T();
         }
 
+        /// <inheritdoc />
         public void Remove<TEntity>(TEntity entity) where TEntity : Entity
         {
             DbContext.Set<TEntity>().Remove(entity);
         }
-
     }
-
 }

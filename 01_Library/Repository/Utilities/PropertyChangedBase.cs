@@ -19,7 +19,42 @@ namespace Repository.Utilities
     {
         #region Implementation of INotifyPropertyChanged
 
+        /// <inheritdoc />
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        #endregion
+
+        #region Implementation of INotifyDataErrorInfo
+
+        /// <inheritdoc />
+        public IEnumerable GetErrors(string propertyName)
+        {
+            if (string.IsNullOrWhiteSpace(propertyName))
+                return null;
+            _errors.TryGetValue(propertyName, out List<string> errorsForName);
+            return errorsForName;
+        }
+
+        /// <inheritdoc />
+        public bool HasErrors => _errors.Any(b => b.Value != null && b.Value.Count > 0);
+
+        /// <inheritdoc />
+        public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
+
+
+        #endregion
+
+        #region Implementation of INotifyPropertyChanging
+
+        public event PropertyChangingEventHandler PropertyChanging;
+
+        #endregion
+
+        #region Implementation of PropertyChangedBase
+
+        private readonly ConcurrentDictionary<string, List<string>> _errors = new ConcurrentDictionary<string, List<string>>();
         private bool _isDirty;
+
         /// <summary>
         /// Dirty flag to tell if needs saving
         /// </summary>
@@ -37,27 +72,24 @@ namespace Repository.Utilities
         }
 
         /// <summary>
-        ///
-        /// </summary>
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        /// <summary>
-        /// 
+        /// Action to be executed after a property is set.
         /// </summary>
         public Action<string> PostSetAction = propertyName => { };
 
         /// <summary>
-        ///
+        /// Raises the PropertyChanged event for the specified property name.
+        /// Validates the model asynchronously before raising the event.
         /// </summary>
         /// <param name="propertyName"></param>
         public void RaisePropertyChanged([CallerMemberName] string propertyName = "")
         {
             ValidateAsync();
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            //PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            OnPropertyChanged(propertyName);
         }
 
         /// <summary>
-        /// Sets the field only if the new value is different from old value, and raises a notify of proerty change
+        /// Sets the field only if the new value is different from old value, and raises a notify of property change
         /// </summary>
         /// <param name="field"></param>
         /// <param name="value"></param>
@@ -73,6 +105,7 @@ namespace Repository.Utilities
         /// <returns>true if value is set and false if new value is same as old value</returns>
         protected bool SetField<T>(ref T field, T value, [CallerMemberName] string propertyName = "")
         {
+            OnPropertyChanging(propertyName);
             if (EqualityComparer<T>.Default.Equals(field, value))
                 return false;
             if (typeof(ComboBoxDropDownItem).IsAssignableFrom(typeof(T)) &&
@@ -87,7 +120,7 @@ namespace Repository.Utilities
 
 
         /// <summary>
-        /// Sets the field only if the new value is different from old value, and raises a notify of proerty change
+        /// Sets the field only if the new value is different from old value, and raises a notify of property change
         /// Useful if you intend to set the member of another object
         /// </summary>
         /// <typeparam name="T"></typeparam>
@@ -111,6 +144,7 @@ namespace Repository.Utilities
         /// <returns></returns>
         protected bool Setter<T>(T field, T value, Action<T> setValue, [CallerMemberName] string propertyName = "")
         {
+            OnPropertyChanging(propertyName);
             if (EqualityComparer<T>.Default.Equals(field, value))
                 return false;
             setValue(value);
@@ -120,29 +154,26 @@ namespace Repository.Utilities
             return true;
         }
 
-        #endregion
-
-        #region Implementation of INotifyDataErrorInfo
-
-        private readonly ConcurrentDictionary<string, List<string>> _errors = new ConcurrentDictionary<string, List<string>>();
-
-        /// <inheritdoc />
-        public IEnumerable GetErrors(string propertyName)
+        /// <summary>
+        /// Raises the PropertyChanged event for the specified property name.
+        /// </summary>
+        /// <param name="propertyName"></param>
+        protected virtual void OnPropertyChanged(string propertyName)
         {
-            if (string.IsNullOrWhiteSpace(propertyName))
-                return null;
-            _errors.TryGetValue(propertyName, out List<string> errorsForName);
-            return errorsForName;
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        /// <inheritdoc />
-        public bool HasErrors => _errors.Any(b => b.Value != null && b.Value.Count > 0);
-
-        /// <inheritdoc />
-        public event EventHandler<DataErrorsChangedEventArgs> ErrorsChanged;
+        /// <summary>
+        /// Raises the PropertyChanging event for the specified property name.
+        /// </summary>
+        /// <param name="propertyName"></param>
+        protected virtual void OnPropertyChanging(string propertyName)
+        {
+            PropertyChanging?.Invoke(this, new PropertyChangingEventArgs(propertyName));
+        }
 
         /// <summary>
-        /// 
+        /// Raises the ErrorsChanged event for the specified property name.
         /// </summary>
         /// <param name="propertyName"></param>
         public void RaiseErrorsChanged(string propertyName)
@@ -202,32 +233,29 @@ namespace Repository.Utilities
             }
         }
 
+        /// <summary>
+        /// Adds list of errors for the specified property name.
+        /// </summary>
+        /// <param name="propertyName"></param>
+        /// <param name="errorMessages"></param>
         public void AddErrors(string propertyName, List<string> errorMessages)
         {
             _errors.TryAdd(propertyName, errorMessages);
             RaiseErrorsChanged(propertyName);
         }
 
+        /// <summary>
+        /// Clears all errors for the specified property name.
+        /// </summary>
+        /// <param name="propertyName"></param>
         public void ClearErrors(string propertyName)
         {
             _errors.TryRemove(propertyName, out List<string> result);
             RaiseErrorsChanged(propertyName);
         }
 
+
         #endregion
-
-
-        public event PropertyChangingEventHandler PropertyChanging;
-
-
-        protected virtual void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-        protected virtual void OnPropertyChanging(string propertyName)
-        {
-            PropertyChanging?.Invoke(this, new PropertyChangingEventArgs(propertyName));
-        }
 
     }
 }

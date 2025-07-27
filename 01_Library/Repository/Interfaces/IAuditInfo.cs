@@ -2,6 +2,9 @@
 
 namespace Repository.Interfaces
 {
+    /// <summary>
+    /// Interface for audit information. Used to track who created or modified an entity and when.
+    /// </summary>
     public interface IAuditInfo
     {
         string CreatedBy { get; set; }
