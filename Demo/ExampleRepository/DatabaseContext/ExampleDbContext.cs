@@ -1,8 +1,8 @@
-﻿using DemoRepository.Models;
+﻿using ExampleRepository.Models;
 using System;
 using System.Data.Entity;
 
-namespace DemoRepository.DatabaseContext
+namespace ExampleRepository.DatabaseContext
 {
     public class ExampleDbContext : DbContext
     {

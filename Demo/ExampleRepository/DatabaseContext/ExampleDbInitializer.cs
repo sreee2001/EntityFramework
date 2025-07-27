@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data.Entity;
 using Repository.Utilities;
 
-namespace DemoRepository.DatabaseContext
+namespace ExampleRepository.DatabaseContext
 {
     internal class ExampleDbInitializer : DropCreateDatabaseAlways<ExampleDbContext>
     {

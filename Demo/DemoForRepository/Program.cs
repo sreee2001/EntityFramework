@@ -1,5 +1,5 @@
-﻿using DemoRepository.DatabaseContext;
-using DemoRepository.Models;
+﻿using ExampleRepository.DatabaseContext;
+using ExampleRepository.Models;
 using System;
 using System.Linq;
 

@@ -1,8 +1,8 @@
-﻿using Repository.Interfaces;
-using Repository.Utilities;
+﻿using Infrastructure.Interfaces;
+using Infrastructure.Utilities;
 using System;
 
-namespace Repository.Entities
+namespace Infrastructure.Entities
 {
     /// <summary>
     /// Base Class for all entities to be saved to database

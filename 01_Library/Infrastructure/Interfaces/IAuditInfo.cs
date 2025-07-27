@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Repository.Interfaces
+namespace Infrastructure.Interfaces
 {
     /// <summary>
     /// Interface for audit information. Used to track who created or modified an entity and when.

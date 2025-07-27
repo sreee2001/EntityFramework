@@ -56,13 +56,17 @@
     <Reference Include="System.Data.Entity" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\01_Library\Infrastructure\Infrastructure.csproj">
+      <Project>{D291B240-85FD-4385-B78A-49E94B3F5560}</Project>
+      <Name>Infrastructure</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\01_Library\Repository\Repository.csproj">
       <Project>{EB0ABD25-8B69-4931-A81D-1FE4F035971F}</Project>
       <Name>Repository</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DemoRepository\DemoRepository.csproj">
-      <Project>{9745f091-9911-404d-aee1-c6bb01f995fe}</Project>
-      <Name>DemoRepository</Name>
+    <ProjectReference Include="..\ExampleRepository\ExampleRepository.csproj">
+      <Project>{9745F091-9911-404D-AEE1-C6BB01F995FE}</Project>
+      <Name>ExampleRepository</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

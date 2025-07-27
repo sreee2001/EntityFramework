@@ -1,6 +1,6 @@
-﻿using Repository.Entities;
+﻿using Infrastructure.Entities;
 
-namespace DemoRepository.Models
+namespace ExampleRepository.Models
 {
     public class Country : ComboBoxDropDownItem {}
     public class Continent : ComboBoxDropDownItem { }

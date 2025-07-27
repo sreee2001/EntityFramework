@@ -1,4 +1,4 @@
-﻿using Repository.Entities;
+﻿using Infrastructure.Entities;
 using System.Collections.Generic;
 using System.Linq;
 

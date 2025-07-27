@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Repository.Entities
+namespace Infrastructure.Entities
 {
     /// <summary>
     /// Generic Class that stores the dropdown lists

@@ -1,4 +1,4 @@
-﻿using Repository.Entities;
+﻿using Infrastructure.Entities;
 using System;
 using System.Collections;
 using System.Collections.Concurrent;
@@ -10,7 +10,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 
-namespace Repository.Utilities
+namespace Infrastructure.Utilities
 {
     /// <summary>
     /// Base class for models that implement INotifyPropertyChanged, INotifyPropertyChanging, and INotifyDataErrorInfo
