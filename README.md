@@ -1,7 +1,10 @@
-# EntityFramework
+# Entity Framework 6 Showcase
 
 > A Collection of Examples of EntityFramework in C# Dotnet
 
+## 🌟 Author
+
+I am [Srikanth Tangella](https://github.com/sreee2001) and I am an Software Engineer with many years of Experience in Desktop software
 After so many years of programming, I created a set of reference projects for Entity Framework using C# Dotnet Framework.
 The purpose is to log my research and provide easy to grab snippets and or base projects for future use
 
