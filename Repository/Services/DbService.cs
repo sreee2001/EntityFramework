@@ -10,53 +10,53 @@ using System.Text;
 
 namespace Repository.Services
 {
-    public class ExampleDbContext : DbContext
-    {
-        public ExampleDbContext() 
-        {
-            // Set Initializer
-            Database.SetInitializer(new ExampleDbInitializer());
-            Configuration.LazyLoadingEnabled = true;
+    //public class ExampleDbContext : DbContext
+    //{
+    //    public ExampleDbContext() 
+    //    {
+    //        // Set Initializer
+    //        Database.SetInitializer(new ExampleDbInitializer());
+    //        Configuration.LazyLoadingEnabled = true;
 
-        }
-        // Define your DbSets here
-        // public DbSet<YourEntity> YourEntities { get; set; }
-    }
+    //    }
+    //    // Define your DbSets here
+    //    // public DbSet<YourEntity> YourEntities { get; set; }
+    //}
 
-    internal class ExampleDbInitializer : DropCreateDatabaseAlways<ExampleDbContext>
-    {
-        public override void InitializeDatabase(ExampleDbContext context)
-        {
-            base.InitializeDatabase(context);
-        }
+    //internal class ExampleDbInitializer : DropCreateDatabaseAlways<ExampleDbContext>
+    //{
+    //    public override void InitializeDatabase(ExampleDbContext context)
+    //    {
+    //        base.InitializeDatabase(context);
+    //    }
 
-        protected override void Seed(ExampleDbContext context)
-        {
-            base.Seed(context);
-            // Add additional Seeding of entries into Db in here
-        }
+    //    protected override void Seed(ExampleDbContext context)
+    //    {
+    //        base.Seed(context);
+    //        // Add additional Seeding of entries into Db in here
+    //    }
 
-        public override string ToString()
-        {
-            return base.ToString();
-        }
+    //    public override string ToString()
+    //    {
+    //        return base.ToString();
+    //    }
 
-        public override bool Equals(object obj)
-        {
-            return base.Equals(obj);
-        }
+    //    public override bool Equals(object obj)
+    //    {
+    //        return base.Equals(obj);
+    //    }
 
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
-    }
+    //    public override int GetHashCode()
+    //    {
+    //        return base.GetHashCode();
+    //    }
+    //}
 
-    [Export(typeof(IDbService))]
-    public class ExampleDbService : DbServiceBase<ExampleDbContext>
-    {
+    //[Export(typeof(IDbService))]
+    //public class ExampleDbService : DbServiceBase<ExampleDbContext>
+    //{
 
-    }
+    //}
 
     //[Export(typeof(IDbService))]
     public abstract class DbServiceBase<T> : IDbService where T : DbContext, new()
