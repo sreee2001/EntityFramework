@@ -2,7 +2,7 @@
 using Repository.Interfaces;
 using Repository.Services;
 
-namespace DemoForRepository.DatabaseContext
+namespace DemoRepository.DatabaseContext
 {
     [Export(typeof(IDbService))]
     public class ExampleDbService : DbServiceBase<ExampleDbContext>

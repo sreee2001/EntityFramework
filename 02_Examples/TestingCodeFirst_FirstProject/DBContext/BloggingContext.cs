@@ -1,8 +1,4 @@
-﻿using System;
-using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Entity;
 using TestingCodeFirst_FirstProject.Models;
 
 namespace TestingCodeFirst_FirstProject.DBContext

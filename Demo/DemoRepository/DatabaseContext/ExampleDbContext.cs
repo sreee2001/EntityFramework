@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DemoRepository.Models;
+using System;
 using System.Data.Entity;
-using DemoForRepository.Models;
 
-namespace DemoForRepository.DatabaseContext
+namespace DemoRepository.DatabaseContext
 {
     public class ExampleDbContext : DbContext
     {
@@ -15,6 +11,9 @@ namespace DemoForRepository.DatabaseContext
             // Set Initializer
             Database.SetInitializer(new ExampleDbInitializer());
             Configuration.LazyLoadingEnabled = true;
+#if DEBUG
+            Console.WriteLine("ExampleDbContext: Database constructed");
+#endif
 
         }
         // Define your DbSets here

@@ -1,18 +1,25 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using Repository.Utilities;
 
-namespace DemoForRepository.DatabaseContext
+namespace DemoRepository.DatabaseContext
 {
     internal class ExampleDbInitializer : DropCreateDatabaseAlways<ExampleDbContext>
     {
         public override void InitializeDatabase(ExampleDbContext context)
         {
+#if DEBUG
+            Console.WriteLine("ExampleDbInitializer: InitializeDatabase called");
+#endif
             base.InitializeDatabase(context);
         }
 
         protected override void Seed(ExampleDbContext context)
         {
+#if DEBUG
+            Console.WriteLine("ExampleDbInitializer: Seeding the Database");
+#endif
             base.Seed(context);
             // Add additional Seeding of entries into Db in here
 
