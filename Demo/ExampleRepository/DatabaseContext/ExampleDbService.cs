@@ -5,7 +5,7 @@ using Repository.Services;
 
 namespace ExampleRepository.DatabaseContext
 {
-    [Export(typeof(IDbService))]
+    //[Export(typeof(IDbService))]
     public class ExampleDbService : DbServiceBase<ExampleDbContext>
     {
 
