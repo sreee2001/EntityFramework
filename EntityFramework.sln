@@ -1,23 +1,23 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36301.6 d17.14
+VisualStudioVersion = 17.14.36301.6
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingCodeFirst_FirstProject", "TestingCodeFirst_FirstProject\TestingCodeFirst_FirstProject.csproj", "{40F0528F-EC3B-42DC-85D2-3705F5FB71EF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFirstExample", "CodeFirstExample\CodeFirstExample.csproj", "{88DAE685-A8F7-4D85-B2F7-4F03E9137668}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFirstWithDatabaseSeeding", "CodeFirstWithDatabaseSeeding\CodeFirstWithDatabaseSeeding.csproj", "{9BC4EBAF-8E69-43F0-8819-268333ACA20F}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{EB0ABD25-8B69-4931-A81D-1FE4F035971F}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 - Examples", "02 - Examples", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 - Library", "01 - Library", "{D8639FFB-9E40-40EB-9D27-5B82C4CD8A1C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Demo", "Demo", "{1871AB7D-EF39-4179-AD8E-5F4C93F8CF89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoForRepository", "DemoForRepository\DemoForRepository.csproj", "{6A6BDD9A-8B84-4995-A959-7201768A8E6C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "01_Library\Repository\Repository.csproj", "{EB0ABD25-8B69-4931-A81D-1FE4F035971F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFirstExample", "02_Examples\CodeFirstExample\CodeFirstExample.csproj", "{88DAE685-A8F7-4D85-B2F7-4F03E9137668}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFirstWithDatabaseSeeding", "02_Examples\CodeFirstWithDatabaseSeeding\CodeFirstWithDatabaseSeeding.csproj", "{9BC4EBAF-8E69-43F0-8819-268333ACA20F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestingCodeFirst_FirstProject", "02_Examples\TestingCodeFirst_FirstProject\TestingCodeFirst_FirstProject.csproj", "{40F0528F-EC3B-42DC-85D2-3705F5FB71EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoForRepository", "Demo\DemoForRepository\DemoForRepository.csproj", "{6A6BDD9A-8B84-4995-A959-7201768A8E6C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +25,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{40F0528F-EC3B-42DC-85D2-3705F5FB71EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{40F0528F-EC3B-42DC-85D2-3705F5FB71EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{40F0528F-EC3B-42DC-85D2-3705F5FB71EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{40F0528F-EC3B-42DC-85D2-3705F5FB71EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB0ABD25-8B69-4931-A81D-1FE4F035971F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB0ABD25-8B69-4931-A81D-1FE4F035971F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB0ABD25-8B69-4931-A81D-1FE4F035971F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB0ABD25-8B69-4931-A81D-1FE4F035971F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{88DAE685-A8F7-4D85-B2F7-4F03E9137668}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{88DAE685-A8F7-4D85-B2F7-4F03E9137668}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88DAE685-A8F7-4D85-B2F7-4F03E9137668}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -37,10 +37,10 @@ Global
 		{9BC4EBAF-8E69-43F0-8819-268333ACA20F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BC4EBAF-8E69-43F0-8819-268333ACA20F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BC4EBAF-8E69-43F0-8819-268333ACA20F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EB0ABD25-8B69-4931-A81D-1FE4F035971F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EB0ABD25-8B69-4931-A81D-1FE4F035971F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EB0ABD25-8B69-4931-A81D-1FE4F035971F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EB0ABD25-8B69-4931-A81D-1FE4F035971F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40F0528F-EC3B-42DC-85D2-3705F5FB71EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40F0528F-EC3B-42DC-85D2-3705F5FB71EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40F0528F-EC3B-42DC-85D2-3705F5FB71EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40F0528F-EC3B-42DC-85D2-3705F5FB71EF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6A6BDD9A-8B84-4995-A959-7201768A8E6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6A6BDD9A-8B84-4995-A959-7201768A8E6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A6BDD9A-8B84-4995-A959-7201768A8E6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -50,10 +50,10 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{40F0528F-EC3B-42DC-85D2-3705F5FB71EF} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{EB0ABD25-8B69-4931-A81D-1FE4F035971F} = {D8639FFB-9E40-40EB-9D27-5B82C4CD8A1C}
 		{88DAE685-A8F7-4D85-B2F7-4F03E9137668} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{9BC4EBAF-8E69-43F0-8819-268333ACA20F} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
-		{EB0ABD25-8B69-4931-A81D-1FE4F035971F} = {D8639FFB-9E40-40EB-9D27-5B82C4CD8A1C}
+		{40F0528F-EC3B-42DC-85D2-3705F5FB71EF} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{6A6BDD9A-8B84-4995-A959-7201768A8E6C} = {1871AB7D-EF39-4179-AD8E-5F4C93F8CF89}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
