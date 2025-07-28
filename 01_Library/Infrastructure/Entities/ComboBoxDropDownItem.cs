@@ -16,7 +16,7 @@ namespace Infrastructure.Entities
         public string Name
         {
             get => name;
-            set => SetField(ref name, value);
+            set => name = value;
         }
 
         private int? sortOrder;
@@ -27,7 +27,7 @@ namespace Infrastructure.Entities
         public int? SortOrder
         {
             get => sortOrder;
-            set => SetField(ref sortOrder, value);
+            set => sortOrder = value;
         }
 
         #region Overrides

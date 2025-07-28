@@ -100,7 +100,6 @@ namespace Repository.Services
                 return;
             T entity = GetById(id);
             DbService.Refresh(entity);
-            entity.IsDirty = false;
         }
 
         public void ResetContext()

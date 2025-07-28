@@ -42,7 +42,6 @@
     <Compile Include="Entities\ComboBoxDropDownItem.cs" />
     <Compile Include="Entities\Entity.cs" />
     <Compile Include="Interfaces\IAuditInfo.cs" />
-    <Compile Include="Utilities\PropertyChangedBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />

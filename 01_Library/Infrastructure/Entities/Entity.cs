@@ -1,13 +1,11 @@
-﻿using Infrastructure.Interfaces;
-using Infrastructure.Utilities;
-using System;
+﻿using System;
 
 namespace Infrastructure.Entities
 {
     /// <summary>
     /// Base Class for all entities to be saved to database
     /// </summary>
-    public abstract class Entity : PropertyChangedBase, IAuditInfo
+    public abstract class Entity
     {
         private int _id;
 
@@ -15,7 +13,7 @@ namespace Infrastructure.Entities
         public int Id
         {
             get => _id;
-            set => SetField(ref _id, value);
+            set => _id = value;
         }
 
         #region Implementation of IAuditInfo
@@ -26,7 +24,7 @@ namespace Infrastructure.Entities
         public string CreatedBy
         {
             get => _createdBy;
-            set => SetField(ref _createdBy, value);
+            set => _createdBy = value;
         }
 
         private string _modifiedBy;
@@ -35,7 +33,7 @@ namespace Infrastructure.Entities
         public string ModifiedBy
         {
             get => _modifiedBy;
-            set => SetField(ref _modifiedBy, value);
+            set => _modifiedBy = value;
         }
 
         private DateTime? _createdDate;
@@ -44,7 +42,7 @@ namespace Infrastructure.Entities
         public DateTime? CreatedDate
         {
             get => _createdDate;
-            set => SetField(ref _createdDate, value);
+            set => _createdDate = value;
         }
 
         private DateTime? _modifiedDate;
@@ -53,7 +51,7 @@ namespace Infrastructure.Entities
         public DateTime? ModifiedDate
         {
             get => _modifiedDate;
-            set => SetField(ref _modifiedDate, value);
+            set => _modifiedDate = value;
         }
 
         #endregion
